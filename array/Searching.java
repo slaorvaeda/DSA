@@ -1,8 +1,10 @@
 package array;
 
+import java.util.ArrayList;
+
 public class Searching {
     public static void main(String[] args) {
-        int[] arr = { 1, 2, 3, 4, 5 };
+        int[] arr = { 1, 2, 3, 4, 5, 3 };
         int target = 3;
 
         // approch 1: linear search
@@ -32,5 +34,19 @@ public class Searching {
 
         // then the time complexity of the above code is O(log n) + O(1) + O(1) + O(1) + O(1) + O(1) + O(1) = O(log n)
         // here space complexity is O(1) : 1 for left, 1 for
+
+
+        // approch 3: find all the indices of the target element in the array
+         ArrayList<Integer> indices = new ArrayList<>();
+
+        for(int i = 0; i < arr.length; i++) {
+
+            if(arr[i] == target) {
+                indices.add(i);
+            }
+        }
+
+        System.out.println(indices);
+        System.out.println(indices.size());
     }
 }
